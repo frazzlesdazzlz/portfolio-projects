@@ -1,27 +1,28 @@
-# OSINT Scraper
+# VirusTotal File Hash Checker
 
-A Python-based OSINT scraper built as part of my cybersecurity portfolio.
+A Python command-line tool that calculates the SHA-256 hash of a file and checks that hash against the VirusTotal API.
 
-## Current Features
+## What It Does
 
-- Loads the VirusTotal API key from a `.env` file
-- Connects to the VirusTotal API
-- Retrieves authenticated user information
-- Parses JSON API responses
+- Accepts a file path as a command-line argument
+- Opens the file in binary mode
+- Generates its SHA-256 hash
+- Sends the hash to the VirusTotal API
+- Uses an API key stored securely in a `.env` file
+- Extracts VirusTotal's latest analysis statistics
+- Displays malicious, suspicious, undetected, and harmless results
+- Handles hashes that VirusTotal does not recognise
 
-## Technologies
+## Requirements
 
-- Python
-- Requests
-- python-dotenv
-- Git
+- Python 3
+- `requests`
+- `python-dotenv`
+- A VirusTotal API key
 
-## Current Status
+## Setup
 
-Work in progress.
+Create a `.env` file inside the project folder:
 
-The project is being built step by step to demonstrate Python fundamentals, API integration, Git workflow, and secure handling of API keys.
-
-## Author
-
-Fraser Scott
+```text
+VT_API_KEY=your_api_key_here
